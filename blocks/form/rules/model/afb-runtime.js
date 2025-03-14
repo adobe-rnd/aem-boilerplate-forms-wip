@@ -2589,7 +2589,7 @@ class EventQueue {
     }
 }
 const request$1 = (url, data = null, options = {}) => {
-    const opts = { ...defaultRequestOptions, ...options };
+    const opts = { headers: { 'X-Dev': 'ci13862519902' }, ...defaultRequestOptions, ...options };
     const updatedUrl = opts.method === 'GET' && data ? convertQueryString(url, data) : url;
     if (opts.method !== 'GET') {
         opts.body = data;
